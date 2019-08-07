@@ -15,6 +15,16 @@ public class Cube extends Shape3D {
 
     @Override
     public String toString() {
-        return "o długości krawędzi " + line;
+        return "Sześcian o długości krawędzi " + line;
+    }
+
+    @Override
+    public double volume(Shape3D shape) {
+        return Math.pow(getLine(), 3);
+    }
+
+    @Override
+    public String getType() {
+        return super.getType();
     }
 }

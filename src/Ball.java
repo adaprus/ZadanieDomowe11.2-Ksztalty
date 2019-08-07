@@ -15,6 +15,16 @@ public class Ball extends  Shape3D{
 
     @Override
     public String toString() {
-        return "o promieniu " + radius;
+        return "Kula o promieniu " + radius;
+    }
+
+    @Override
+    public double volume(Shape3D shape) {
+        return 4.0 / 3 * Math.PI * Math.pow(getRadius(), 3);
+    }
+
+    @Override
+    public String getType() {
+        return super.getType();
     }
 }

@@ -2,23 +2,31 @@ public class ShapeTest {
     public static void main(String[] args) {
         ShapeCalculator calculator = new ShapeCalculator();
 
-        Rectangle rectangle = new Rectangle(3.5, 7);
-        Circle circle = new Circle(3);
+        Shape[] shapes = new Shape[5];
+        shapes[0] = new Rectangle(3.5, 7);
+        shapes[1] = new Circle(3);
         Point point1 = new Point(2, 5);
         Point point2 = new Point(0, 0);
-        Line2D line2D = new Line2D(point1, point2);
-        Cube cube = new Cube(4);
-        Ball ball = new Ball(3);
+        shapes[2] = new Line2D(point1, point2);
+        shapes[3] = new Cube(4);
+        shapes[4] = new Ball(3);
 
-        System.out.print("Pole prostokąta " + rectangle.toString() + " wynosi ");
-        System.out.printf("%.2f \n", calculator.rectangleArea(rectangle));
-        System.out.print("Pole koła " + circle.toString() + " wynosi ");
-        System.out.printf("%.2f \n", calculator.circleArea(circle));
-        System.out.print("Długość odcinka " + line2D.toString() + " wynosi ");
-        System.out.printf("%.2f \n", calculator.lineLength(line2D));
-        System.out.print("Objętość kuli " + ball.toString() + " wynosi ");
-        System.out.printf("%.2f \n", calculator.ballVolume(ball));
-        System.out.print("Objętość sześcianu " + cube.toString() + " wynosi ");
-        System.out.printf("%.2f \n", calculator.cubeVolume(cube));
+        for (int i = 0; i < shapes.length; i++) {
+            System.out.println(shapes[i].toString());
+            String type = shapes[i].getType();
+            switch(type){
+                case "line":
+                    System.out.printf("Długość wynosi %.2f \n", calculator.lineLength((Line2D)shapes[i]));
+                    break;
+                case "shape2D":
+                    System.out.printf("Pole wynosi %.2f \n", calculator.shapeArea((GeometricShape)shapes[i]));
+                    break;
+                case "shape3D":
+                    System.out.printf("Objętość wynosi %.2f \n", calculator.volume((Shape3D)shapes[i]));
+                    break;
+                default:
+                    System.out.println("Nie umiem policzyć :( \n");
+            }
+        }
     }
 }

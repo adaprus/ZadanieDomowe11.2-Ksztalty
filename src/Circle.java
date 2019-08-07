@@ -15,6 +15,16 @@ public class Circle extends GeometricShape {
 
     @Override
     public String toString() {
-        return "o promieniu " + radius;
+        return "Okrąg o promieniu " + radius;
+    }
+
+    @Override
+    public double shapeArea(GeometricShape shape) {
+        return Math.PI * Math.pow(getRadius(), 2);
+    }
+
+    @Override
+    public String getType() {
+        return super.getType();
     }
 }

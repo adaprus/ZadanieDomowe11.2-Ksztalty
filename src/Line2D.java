@@ -27,8 +27,18 @@ public class Line2D extends Shape2D {
     }
 
     @Override
+    public String getType() {
+        return "line";
+    }
+
+    @Override
     public String toString() {
-        return "zbudowanego z punktów " + point1.toString() +
+        return "Odcinek zbudowany z punktów " + point1.toString() +
                 " i " + point2.toString();
+    }
+
+    @Override
+    public double shapeArea(GeometricShape shape) {
+        return 0;
     }
 }

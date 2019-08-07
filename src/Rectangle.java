@@ -28,7 +28,17 @@ public class Rectangle extends GeometricShape {
 
     @Override
     public String toString() {
-        return "o bokach: " + line1 +
+        return "Prostokąt o bokach: " + line1 +
                 " i " + line2;
+    }
+
+    @Override
+    public double shapeArea(GeometricShape shape) {
+        return line1 * line2;
+    }
+
+    @Override
+    public String getType() {
+        return super.getType();
     }
 }
