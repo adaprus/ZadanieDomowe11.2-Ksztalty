@@ -1,4 +1,4 @@
-public abstract class Shape2D extends Shape implements Calc2D{
+public abstract class Shape2D extends Shape {
     @Override
     public String getType() {
         return "shape2D";

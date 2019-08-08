@@ -36,9 +36,4 @@ public class Line2D extends Shape2D {
         return "Odcinek zbudowany z punktów " + point1.toString() +
                 " i " + point2.toString();
     }
-
-    @Override
-    public double shapeArea(GeometricShape shape) {
-        return 0;
-    }
 }
